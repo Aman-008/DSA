@@ -116,7 +116,91 @@ void expalinList(){
 }
 void explainStack(){
     //LIFO --> Last In First Out
-    
+    stack<int>st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+    st.push(5);
+
+    //Access the Stack
+    while(st.empty() == false){
+        cout << st.top() << " ";
+        st.pop();
+    }
+
+}
+void explainQueue(){
+    // FIFO --> First In First Out
+    queue<int>qu;
+    qu.push(5);
+    qu.push(53);
+    qu.push(51);
+    qu.push(55);
+    qu.push(50);
+    while(qu.empty()==false){
+        cout << qu.front() << " ";
+        qu.pop();
+    }
+}
+void explainPriorityQueue(){
+    // Store the highest element at the  top
+    priority_queue<int>pq;
+    // min heap
+    // priority_queue<int,vector<int>,greater<int>>pq;
+    pq.push(10);
+    pq.push(10);
+    pq.push(1000);
+    pq.push(100);
+    pq.push(101);
+    while(pq.empty()==false){
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+}
+void explainSet(){
+    // Stores only unique element 
+    // and in ascending order
+    set <int>st;
+    st.insert(5);
+    st.insert(75);
+    st.insert(63);
+    st.insert(6);
+    st.insert(5);
+    // Return 1 if the value present in the set 
+    // Return 0 if the value not present in the set
+    // cout << st.count(5) << endl;
+
+
+    for(auto i:st){
+        cout << i << " ";
+    }
+    cout << endl;
+
+    //Erase
+    // auto it1 = st.begin();
+    // it1++;
+    // auto it2 = st.end();
+    // it2--;
+    // st.erase(it1,it2);
+    // for(auto i: st){
+    //     cout << i << " ";
+    // }
+    // cout << endl;
+
+
+    // LowerBound
+    // Return an Iterator 
+    // that is >= given number
+    auto it = st.lower_bound(5);
+    cout << *it << endl;
+
+
+    // UpperBound
+    //Return an Iterator
+    // that is > given number
+    auto it1 = st.upper_bound(5);
+    cout << *it1 << endl;
 }
 
 
@@ -134,6 +218,10 @@ int main(){
     // swapVector();
     // insertVector();
     // explainList();
+    // explainStack();
+    // explainQueue();
+    // explainPriorityQueue();
+    explainSet();
 
 
     return 0;
