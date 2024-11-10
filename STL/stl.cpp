@@ -202,8 +202,26 @@ void explainSet(){
     auto it1 = st.upper_bound(5);
     cout << *it1 << endl;
 }
+void explainMultiSet(){
+    multiset<int>ml;
+    ml.insert(1);
+    ml.insert(1);
+    ml.insert(1);
+    ml.insert(3);
+    ml.insert(2);
+    ml.insert(5);
+    ml.insert(2);
+    for(auto i : ml){
+        cout << i << " ";
+    }
+    cout << endl;
 
-
+    auto it = ml.erase(ml.find(1)); // delete the first location of 1
+    for(auto it: ml){
+        cout << it << " ";
+    }
+    cout << endl;
+}
 
 
 
@@ -221,7 +239,8 @@ int main(){
     // explainStack();
     // explainQueue();
     // explainPriorityQueue();
-    explainSet();
+    // explainSet();
+    explainMultiSet();
 
 
     return 0;
