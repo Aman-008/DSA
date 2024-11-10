@@ -222,9 +222,143 @@ void explainMultiSet(){
     }
     cout << endl;
 }
+void explainUnOrderedSet(){
+    // Return random but unique element 
+    // it has fastest Complexcity
+    unordered_set<int>us;
+    us.insert(1);
+    us.insert(1);
+    us.insert(11);
+    us.insert(12);
+    us.insert(10);
+    us.insert(11);
+    us.insert(10);
+    for(auto it : us){
+        cout << it << " ";
+    }
+    cout << endl;
+}
+void explainMap(){
+    map<int, string>mpp;
+    mpp[4] = "raj";
+    mpp[1]="abc";
+    mpp[2]="bcd";
+    mpp[3]="edf";
+    mpp.insert({5,"aman"});
+    for(auto it: mpp){
+        cout << it.first << "-->" << it.second << endl;
+    }
+
+    auto it = mpp.find(4);
+    cout << (*it).first << "-->" << (*it).second << endl;
+
+}
+void unOrderdMap(){
+    unordered_map<int, string>mpp;
+    mpp[4] = "raj";
+    mpp[1]="abc";
+    mpp[2]="bcd";
+    mpp[3]="edf";
+    mpp.insert({5,"aman"});
+    for(auto it: mpp){
+        cout << it.first << "==>" << it.second << endl;
+    }
+}
+void multiMap(){
+    multimap<int, char>mpp;
+    mpp.insert({1,'a'});
+    mpp.insert({1,'a'});
+    mpp.insert({1,'b'});
+    mpp.insert({3,'a'});
+    mpp.insert({3,'b'});
+    mpp.insert({2,'b'});
+    mpp.insert({2,'a'});
+    mpp.insert({1,'b'});
+    mpp.insert({2,'c'});
+    auto it = mpp.equal_range(2);
+    for(auto i = it.first; i!=it.second;i++){
+        cout << (*i).first << "-->" << (*i).second << endl;
+    }
+}
+void explainSort(){
+    int arr[5] = {2,4,6,3,2};
+    sort(arr,arr+5);
+    for(auto i=0; i<5;i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    vector<int>vec={4,3,2,9,7};
+    sort(vec.begin(),vec.end());
+    for(auto i:vec){
+        cout << i << " ";
+    }
+    cout << endl;
 
 
 
+}
+void explainAccumulate(){
+    int arr[5] = {2,4,6,3,2};
+    // accumulate return  totalSum of array + given number
+    cout << accumulate(arr,arr+5,6);
+}
+void explainCount(){
+    int arr[5] = {2,4,6,3,2};
+    int num = 2;
+    cout << count(arr,arr+5,num);
+}
+void explainFind(){
+    int arr[5] = {2,4,6,3,2};
+    // int num = 2;
+    auto it = find(arr,arr+5,4);
+    cout << *it << " ";
+}
+void explainPermutation(){
+    string str = "abc";
+    do{
+        cout << str << endl;
+    }while(next_permutation(str.begin(),str.end()));
+}
+void explainPrePermutation(){
+    string str = "cba";
+    do{
+        cout << str << endl;
+    }while(prev_permutation(str.begin(),str.end()));
+    // This is not work for integer?
+}
+void explainMaxElement(){
+    int arr[] = {2,3,5,7,9};
+    auto it = *max_element(arr,arr+5);
+    cout << it << endl;
+}
+void explainMinElement(){
+    int arr[] = {2,3,5,7,9};
+    auto it = *min_element(arr,arr+5);
+    cout << it << endl;
+}
+void explainReverse(){
+    int arr[] = {2,3,5,7,9};
+    reverse(arr,arr+5);
+    for(auto i = 0;i<5;i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    
+}
+bool internalComparator(pair<int,int>el1,pair<int,int>el2){
+    if(el1.second > el2.second) return true;
+    if(el1.second < el2.second) return false;
+    if(el1.first < el2.first) return true;
+    return false;
+}
+void explainComperator(){
+    pair<int,int>arr[] = {{1,6}, {1,5}, {2,6}, {2,9}, {3,9}};
+    sort(arr,arr+5,internalComparator);
+    for(auto i=0;i<5;i++){
+        cout << "{" <<arr[i].first << "," << arr[i].second << "} ";
+    }
+}
 int main(){
     // getPower();
     // explainPair();
@@ -240,7 +374,21 @@ int main(){
     // explainQueue();
     // explainPriorityQueue();
     // explainSet();
-    explainMultiSet();
+    // explainMultiSet();
+    // explainUnOrderedSet();
+    // explainMap();
+    // unOrderdMap();
+    // multiMap();
+    // explainSort();
+    // explainAccumulate();
+    // explainCount();
+    // explainFind();
+    // explainPermutation();
+    // explainPrePermutation();
+    // explainMaxElement();
+    // explainMinElement();
+    // explainReverse();
+    explainComperator();
 
 
     return 0;
