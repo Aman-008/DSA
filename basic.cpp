@@ -4,20 +4,15 @@ using namespace std;
 void print(){
     cout << "I am a pring function" << endl;
 }
-
-
 void inputTwoNumbersAndPrintAddOfThem(){
     int num1,num2;
     cin >> num1 >> num2;
     cout << num1 + num2 << endl;
 }
-
-
 int sumOfTwoNumbers(int num1, int num2){
     int res = num1 + num2;
     return res;
 }
-
 // void explainPassByValueAndReference(int x){
 void explainPassByValueAndReference(int &x){
     x = x + 10;
@@ -42,6 +37,7 @@ int main(){
 }
 // int main()
 // {
+
 //     // range --> (-10^9 , 10^9)
 //     // int numInt = INT_MAX;
 //     // int numInt = INT_MIN;
